@@ -1,7 +1,6 @@
 # SNAP Tools
 
-SNAP Tools is a collection of utilities and tools related to **ESA SNAP** (Sentinel Application Platform).  
-It provides various modules to enhance and streamline SNAP-based workflows.
+SNAP Tools is a collection of utilities and tools related to **ESA SNAP** (Sentinel Application Platform).
 
 ## Modules
 - **snap-performance-test**: Tools for benchmarking SNAP readers and writers
