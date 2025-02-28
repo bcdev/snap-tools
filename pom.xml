@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>eu.esa.snap</groupId>
+  <artifactId>snap-tools</artifactId>
+  <version>12.0.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+
+  <name>SNAP Tools</name>
+
+  <properties>
+    <snap.version>12.0.0-SNAPSHOT</snap.version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.release>21</maven.compiler.release>
+    <junit.version>4.13.2</junit.version>
+    <mockito.version>5.5.0</mockito.version>
+  </properties>
+
+  <modules>
+    <module>snap-performance-test</module>
+  </modules>
+
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>${junit.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.mockito</groupId>
+      <artifactId>mockito-core</artifactId>
+      <version>${mockito.version}</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+
+
+  <repositories>
+    <repository>
+      <id>snap-repo-public</id>
+      <name>Public Maven Repository for SNAP</name>
+      <url>https://nexus.snap-ci.ovh/repository/snap-maven-public/</url>
+      <releases>
+        <enabled>true</enabled>
+        <checksumPolicy>warn</checksumPolicy>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+        <checksumPolicy>warn</checksumPolicy>
+      </snapshots>
+    </repository>
+
+    <repository>
+      <id>osgeo</id>
+      <url>https://repo.osgeo.org/repository/geotools-releases/</url>
+    </repository>
+  </repositories>
+
+
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>license-maven-plugin</artifactId>
+          <version>1.19</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>3.11.0</version>
+          <configuration>
+            <source>${maven.compiler.release}</source>
+            <target>${maven.compiler.release}</target>
+            <debug>true</debug>
+            <encoding>${project.build.sourceEncoding}</encoding>
+            <excludes>
+              <exclude>.gitignore</exclude>
+            </excludes>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+</project>
